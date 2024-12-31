@@ -1,0 +1,59 @@
+Conceptual Design
+
+The system consists of:
+
+    A conveyor belt with sensors to detect when a box is present.
+    A barcode scanner to read package information.
+    A sorting mechanism (e.g., actuators or diverters) to direct packages to the appropriate bins.
+    Four bins for sorting: Bin 1, Bin 2, Bin 3, and the Reject Bin.
+    A microcontroller (e.g., Arduino or Raspberry Pi) to control the system.
+
+Flowchart
+
+Here’s a flowchart detailing the operation:
+
+    Start.
+    Conveyor moves boxes forward.
+    Sensor detects a box:
+        Stop the conveyor.
+        Read the barcode.
+    Parse barcode:
+        Validate package dimensions and weight.
+        Extract package ID and sort location.
+    Validate the package:
+        If dimensions or weight are out of range, send to the Reject Bin.
+        If valid, sort based on the sort location code.
+    Log the package ID and destination.
+    Resume conveyor movement.
+    Repeat until all boxes are sorted.
+
+Basic Components
+Mechanical:
+
+    Conveyor belt: For transporting boxes.
+    Diverters: For directing boxes to bins.
+    Four bins: For sorted and rejected boxes.
+
+Sensors and Electronics:
+
+    IR or Ultrasonic sensor: For detecting when a box blocks the sensor.
+    Barcode scanner: To read Code128 barcodes.
+    Load sensor: To measure weight.
+    Microcontroller: Arduino or Raspberry Pi.
+    Power supply: To power the system.
+
+Additional:
+
+    Computer or display unit: To monitor the system and log data.
+
+Cost Considerations
+Component	Quantity	Estimated Cost Per Unit	Total Cost
+Conveyor belt	1	$500	$500
+IR Sensor	2	$15	$30
+Barcode scanner	1	$80	$80
+Load sensor	1	$30	$30
+Actuators/Diverters	3	$50	$150
+Arduino/Raspberry Pi	1	$60	$60
+Power supply	1	$50	$50
+Miscellaneous components	-	$100	$100
+Total			$1000
